@@ -17,7 +17,7 @@ export const Hero = () => {
 
         <h1 className="text-5xl md:text-7xl font-extrabold leading-[1.1] mb-6 tracking-tight">
           Eleve seu serviço ao <br />
-          <span className="text-gradient">Próximo Nível</span>
+          <span className="text-gradient">Próximo Nível Hoje</span>
         </h1>
 
         <p className="text-lg md:text-xl text-white/60 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
