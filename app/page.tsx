@@ -1,11 +1,25 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { Features } from '@/components/Features';
 import { Preview } from '@/components/Preview';
+import { Process } from '@/components/Process';
 import { Testimonials } from '@/components/Testimonials';
 import { FAQ } from '@/components/FAQ';
 import { Footer } from '@/components/Footer';
+import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
+
+const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6, delay }}
+  >
+    {children}
+  </motion.div>
+);
 
 export default function Home() {
   return (
@@ -17,11 +31,30 @@ export default function Home() {
       <Navbar />
 
       <Hero />
-      <Features />
-      <Preview />
-      <Testimonials />
-      <FAQ />
+
+      <FadeIn delay={0.1}>
+        <Features />
+      </FadeIn>
+
+      <FadeIn delay={0.2}>
+        <Preview />
+      </FadeIn>
+
+      <FadeIn delay={0.3}>
+        <Process />
+      </FadeIn>
+
+      <FadeIn delay={0.4}>
+        <Testimonials />
+      </FadeIn>
+
+      <FadeIn delay={0.5}>
+        <FAQ />
+      </FadeIn>
+
       <Footer />
+
+      <FloatingWhatsApp />
     </main>
   );
 }
